@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maaf ya Sayangku</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #b0413e;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .heart {
+      font-size: 2rem;
+      animation: beat 1s infinite;
+      color: #e25555;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Efek Bintang */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .stars div {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 5s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Efek Hati Hujan */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      color: #ff4d6d;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="hearts"></div>
+
+  <div class="container">
+    <h1>Maaf ya sayangku</h1>
+    <p>
+      Kadang aku tenggelam oleh kesibukan yang tiba-tiba datang seperti badai.<br>
+      Bukan karena aku lupa, tapi karena dunia menuntut begitu banyak hal dariku.<br><br>
+      Tapi kamu... selalu jadi rumah yang ingin aku pulangin.<br>
+      Aku tahu kamu sering marah saat aku tiba-tiba hilang — dan kamu berhak.<br>
+      Tapi percayalah, hatiku tidak pernah jauh darimu.<br><br>
+      Aku minta maaf, dan aku ingin kamu tahu...<br>
+      Aku sayang kamu. Lebih dari yang bisa diungkapkan dengan kata-kata.<br>
+      <span class="heart">❤️</span><br>
+      Terima kasih karena masih bersamaku, meskipun aku belum sempurna.
+    </p>
+    <footer>
+      Web ini dibuat khusus untuk kamu yang paling sabar dan paling aku cintai 🌹
+    </footer>
+  </div>
+
+  <script>
+    // Generate bintang
+    const starContainer = document.querySelector('.stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      starContainer.appendChild(star);
+    }
+
+    // Generate hujan hati
+    const heartContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('span');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      heartContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
